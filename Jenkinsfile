@@ -25,3 +25,5 @@ stage('Docker') {
         sleep 10
       }
     }
+  }
+}
