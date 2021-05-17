@@ -3,6 +3,16 @@ pipeline {
   tools {
     maven 'M2_HOME'
   }
+  
+  stages {
+    stage('build') {
+      steps {
+        sh 'mvn clean'
+        sh 'mvn install'
+        sh 'mvn package'
+        
+      }
+    }
   environment {
     registry = "eugenia1/devops-pipeline"
     registryCredential = 'dockerUserID'
