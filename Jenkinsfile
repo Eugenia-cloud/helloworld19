@@ -13,6 +13,7 @@ pipeline {
         
       }
     }
+    stages {
     stage ('Docker') {
   environment {
     registry = "eugenia1/devops-pipeline"
@@ -42,4 +43,3 @@ pipeline {
       }
     }
   }
-}
