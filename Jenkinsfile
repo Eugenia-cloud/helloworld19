@@ -17,6 +17,7 @@ pipeline {
     registry = "eugenia1/devops-pipeline"
     registryCredential = 'dockerUserID'
   }
+}
   stages {
     stage('Build') {
       steps {
