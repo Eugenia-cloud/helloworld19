@@ -3,6 +3,10 @@ pipeline {
   tools {
     maven 'M2_HOME'
   }
+  environment {
+    registry = "eugenia1/devops-pipeline"
+    registryCredential = 'dockerUserID'
+  }
   stages {
     stage('Build') {
       steps {
@@ -19,14 +23,8 @@ pipeline {
     }
   stage('Deploy') {
       steps {
-        echo "deploy step"
-        sleep 10
-      }
-    }
-stage('Docker') {
-      steps {
-        echo "image step"
-        sleep 10
+         script {
+        docker.build registry + ":$BUILD_NUMBER"
       }
     }
   }
