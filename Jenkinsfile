@@ -13,6 +13,7 @@ pipeline {
         
       }
     }
+    stage ('Docker') {
   environment {
     registry = "eugenia1/devops-pipeline"
     registryCredential = 'dockerUserID'
