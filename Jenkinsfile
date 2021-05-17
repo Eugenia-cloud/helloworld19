@@ -2,19 +2,9 @@ pipeline {
   agent any
   tools {
     maven 'M2_HOME'
-  }
-  
-  stages {
-    stage('build') {
-      steps {
-        sh 'mvn clean'
-        sh 'mvn install'
-        sh 'mvn package'
-        
       }
     }
-    stages {
-    stage ('Docker') {
+   
   environment {
     registry = "eugenia1/devops-pipeline"
     registryCredential = 'dockerUserID'
@@ -42,6 +32,3 @@ pipeline {
            }
          }
        }
-     }
-   } 
- }    
